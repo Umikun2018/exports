@@ -26,9 +26,10 @@ var export_str = (function (_a){
 
 	if(effective){
 		var da = Math.min(a - mouseDownA, a - (bulletFoundA - bulletDelayEMA)) + 35;
-		var state = Math.floor(da / cycleLen * NCANNON) % NCANNON;
+		var old_state = state;
+		state = Math.floor(da / cycleLen * NCANNON) % NCANNON;
 		var angle = angleUnit * state * inverter;
-		if(state == 0) inverter = inverter * -1;
+		if(old_state != 0 && state == 0) inverter = inverter * -1;
 
 		var sin = Math.sin(angle);
 		var cos = Math.cos(angle);
