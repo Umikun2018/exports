@@ -103,8 +103,8 @@ var export_string = (function (a){
 	if(mouseDown){
 		var gun = gameData.items[game.activePlayer.weapType];
 		if(gun && (gun.fireMode == "single" || game.activePlayer.weapType == "fists")){
-			if(frameCount % 4 == 0)canvas.dispatchEvent(mouseUpEvent);
-			else if(frameCount % 6 == 1) canvas.dispatchEvent(mouseDownEvent);
+			if(frameCount % 3 == 0)canvas.dispatchEvent(mouseUpEvent);
+			else if(frameCount % 3 == 1) canvas.dispatchEvent(mouseDownEvent);
 		}
 	}
 }).toString();
