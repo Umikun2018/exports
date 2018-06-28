@@ -1,5 +1,7 @@
 (function(){//sessionの操作
-
+	if(window.hyoui) return;
+	window.hyoui = true;
+	
 	var container = document.createElement("div");
 	container.style.position = "fixed";
 	container.style["padding"] = "20px";
